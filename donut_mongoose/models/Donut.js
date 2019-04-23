@@ -2,7 +2,7 @@
 const mongoose = require('../db/connection.js');
 
 // create your donut schema:
-const DonutSchema = newSchema({
+const DonutSchema = mongoose.Schema({
     //write your schema fields here
     name: { type: String, required: true },
     description: { type: String, required: true },
@@ -12,15 +12,13 @@ const DonutSchema = newSchema({
     });
 
 
-    let DonutCollection = mongoose.model("Donut", DonutSchema);
+    let Donut = mongoose.model("Donut", DonutSchema);
 
-    function createDonut(newDonut) {
-        return DonutCollection.create(newDonut);
-      }
+    // function createDonut(newDonut) {
+    //     return DonutCollection.create(newDonut);
+    //   }
 
 
     // export the donut model with module.exports
-module.exports = {
-    createDonut
+module.exports = Donut
 
-};
