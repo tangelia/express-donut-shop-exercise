@@ -34,3 +34,7 @@ app.use('/', routes)
 // LISTENERS
 //= =====================
 // CONNECT MONGOOSE TO "donut_store"
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log("Connected at: " + PORT);
+});
